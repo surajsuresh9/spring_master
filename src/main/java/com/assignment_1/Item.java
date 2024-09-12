@@ -1,4 +1,4 @@
-package com.assignment;
+package com.assignment_1;
 
 public class Item {
     private int id;
