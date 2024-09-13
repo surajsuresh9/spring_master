@@ -8,7 +8,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean name="e1" class="com.inner_bean.Employee" p:id="123">
+    <bean name="e1" class="com.inner_bean.Employee" p:id="123" scope="prototype">
         <property name="address">
 <!--            This is an inner bean-->
             <bean class="com.inner_bean.Address" p:hno="12333" p:city="Indore" p:street="Street 232"/>
