@@ -3,18 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean name="e1" class="com.inner_bean.Employee" p:id="123" scope="prototype">
-        <property name="address">
-            <!--            This is an inner bean-->
-            <bean class="com.inner_bean.Address" p:hno="12333" p:city="Indore"
-                  p:street="Street 232"/>
-        </property>
+    <bean name="address" class="com.constructorInjection.Address" p:hno="2325" p:street="7492-Street"
+          p:city="Bengaluru"/>
+
+    <bean name="emp" class="com.constructorInjection.Employee" c:id="3242" c:address-ref="address">
+        <!--        <constructor-arg value="123"/>-->
+        <!--        <constructor-arg ref="address"/>-->
     </bean>
 
-    <context:annotation-config/>
 </beans>
